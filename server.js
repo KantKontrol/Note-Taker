@@ -12,6 +12,8 @@ server.use(express.urlencoded({ extended: true }));
 
 //Routes
 
+require("./routes/htmlRoutes")(server);
+require("./routes/apiRoutes")(server);
 
 
 //Start Server
