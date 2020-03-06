@@ -5,13 +5,13 @@ let server = express();
 const PORT = 8080;
 
 
+//For Handling data and sending html
+server.use(express.static("public"));
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
 
-
 //Routes
-
 require("./routes/htmlRoutes")(server);
 require("./routes/apiRoutes")(server);
 
