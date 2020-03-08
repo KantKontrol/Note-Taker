@@ -6,4 +6,14 @@ module.exports = function(server){
 
             res.json(db);
     });
+
+    server.post("/api/notes", (req, res) => {
+
+        let incomingData = req.body;
+
+        db.push(incomingData);
+
+        res.json(incomingData);
+
+    });
 }
