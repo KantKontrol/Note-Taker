@@ -21,4 +21,19 @@ module.exports = function(server){
         res.json(incomingData);
 
     });
+
+    server.delete("/api/notes/:id", (req, res) => {
+
+        let toDelete = req.params.id;
+
+        for(let i = 0;i < db.length;i++){
+
+            let e = db[i];
+
+            if(e.id == toDelete){
+                db.splice(i);
+                res.json(true);
+            }
+        }
+    });
 }
