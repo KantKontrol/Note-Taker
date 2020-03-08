@@ -1,5 +1,7 @@
 const db = require("../db/db.json");
 
+let noteID = 0;
+
 module.exports = function(server){
 
     server.get("/api/notes", (req, res) => {
@@ -10,6 +12,9 @@ module.exports = function(server){
     server.post("/api/notes", (req, res) => {
 
         let incomingData = req.body;
+        
+        //add ID to note
+        incomingData.id = noteID++;
 
         db.push(incomingData);
 
