@@ -2,7 +2,7 @@ const express = require("express");
 
 
 let server = express();
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 
 //For Handling data and sending html
